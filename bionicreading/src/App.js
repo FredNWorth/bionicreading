@@ -1,14 +1,26 @@
-import logo from "./logo.svg";
 import "./App.css";
+import { useRef } from "react";
 import BionicWrapper from "./bionicwrapper/wrapper";
+
 function App() {
+  const bionicOn = useRef(true);
+
+  const bionicHandler = () => {
+    console.log("clicked");
+    bionicOn.current = true;
+  };
   return (
     <>
-      <BionicWrapper>
+      <BionicWrapper bionicOn={bionicOn.current}>
         <p>This is a test</p>
         <p>This is another line</p>
-        <button>doesn't count</button>
-        <a>Also doesn't count</a>
+        <button
+          onClick={() => {
+            bionicHandler();
+          }}
+        >
+          doesn't count
+        </button>
       </BionicWrapper>
     </>
   );

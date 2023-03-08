@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import useBionicWrapper from "./useBionicWrapper";
 
-export default function BionicWrapper({ children }) {
-  const newChildren = useBionicWrapper(children);
+export default function BionicWrapper({ bionicOn, children }) {
+  const newChildren = useBionicWrapper(bionicOn, children);
 
-  return <>{newChildren}</>;
+  return <>{bionicOn ? newChildren : children}</>;
 }
