@@ -1,17 +1,16 @@
 import "./App.css";
-import { useRef } from "react";
+import { useState } from "react";
 import BionicWrapper from "./bionicwrapper/wrapper";
 
 function App() {
-  const bionicOn = useRef(true);
+  const [bionicOn, setBionicOn] = useState(false);
 
   const bionicHandler = () => {
-    console.log("clicked");
-    bionicOn.current = true;
+    setBionicOn(bionicOn === true ? false : true);
   };
   return (
     <>
-      <BionicWrapper bionicOn={bionicOn.current}>
+      <BionicWrapper bionicOn={bionicOn}>
         <p>This is a test</p>
         <p>This is another line</p>
         <button
