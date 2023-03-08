@@ -18,7 +18,7 @@ function App() {
             bionicHandler();
           }}
         >
-          doesn't count
+          Click to go bionic
         </button>
       </BionicWrapper>
     </>
