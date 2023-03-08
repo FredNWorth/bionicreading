@@ -2,14 +2,15 @@ import React, { createElement, useEffect, useState } from "react";
 import "./bioniccss.css";
 export default function useBionicWrapper(bionicOn, children) {
   const [childReturn, setChildReturn] = useState();
-  console.log("bionic On", bionicOn);
+
   function isString(value) {
     return typeof value === "string" || value instanceof String;
   }
   function convertChildren() {
-    let newChildren = new Array();
-    children.map((child, index) => {
-      if (child.type == "p" || child.type == "br") {
+    let newChildren = [];
+    // eslint-disable-next-line array-callback-return
+    children.map((child) => {
+      if (child.type === "p") {
         if (isString(child.props.children)) {
           newChildren.push(createElement(child.type));
           let pArray = child.props.children.split(" ");
@@ -47,7 +48,7 @@ export default function useBionicWrapper(bionicOn, children) {
 
   useEffect(() => {
     convertChildren();
-  }, [bionicOn]);
+  }, []);
 
   return childReturn;
 }
