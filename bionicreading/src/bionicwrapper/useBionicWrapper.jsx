@@ -50,7 +50,7 @@ export default function useBionicWrapper(bionicOn, children) {
 
   useEffect(() => {
     convertChildren();
-  }, [children]);
+  }, [bionicOn]);
 
   return childReturn;
 }

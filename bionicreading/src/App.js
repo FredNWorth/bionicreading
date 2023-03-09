@@ -1,3 +1,4 @@
+import React from "react";
 import "./App.css";
 import { useState } from "react";
 import BionicWrapper from "./bionicwrapper/wrapper";
@@ -8,24 +9,27 @@ function App() {
   const bionicHandler = () => {
     setBionicOn(bionicOn ? false : true);
   };
-  return (
-    <>
+
+  return (<>
+
+    <div style={{ margin: 30, width: "500px" }}>
       <BionicWrapper bionicOn={bionicOn}>
-        This is a test<br />
-        This is another line<br />
-        <i>Text block is the primary control</i> for displaying read-only text in apps.<br />
-        You can use it to display single-line or multi-line text, inline hyperlinks,<br />
-        and text with formatting like bold, italic, or underlined.
+        Bionic Reading is a new method facilitating the reading process by guiding the eyes through text with artificial fixation points.<br />
+        As a result, the reader is only focusing on the highlighted initial letters and lets the brain center complete the word.<br />
+        In a digital world dominated by shallow forms of reading, Bionic Reading aims to encourage a more in-depth reading and understanding of written content.
       </BionicWrapper>
       <button
+        as="a"
+        variant='success'
         onClick={() => {
           bionicHandler();
         }}
       >
         Click to go bionic
       </button>
-    </>
-  );
+    </div>
+
+  </>);
 }
 
 export default App;
