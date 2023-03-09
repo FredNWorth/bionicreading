@@ -1,4 +1,7 @@
+.bionic,
 .bionicBold {
-    font-weight: 900;
-
-  };
+  font-size: larger;
+}
+.bionicBold {
+  font-weight: +700;
+}

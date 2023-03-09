@@ -13,7 +13,7 @@ function App() {
       <BionicWrapper bionicOn={bionicOn}>
         This is a test<br />
         This is another line<br />
-        Text block is the primary control for displaying read-only text in apps.<br />
+        <i>Text block is the primary control</i> for displaying read-only text in apps.<br />
         You can use it to display single-line or multi-line text, inline hyperlinks,<br />
         and text with formatting like bold, italic, or underlined.
       </BionicWrapper>
