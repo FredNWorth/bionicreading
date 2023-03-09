@@ -1,4 +1,4 @@
-import React, { createElement, useEffect, useState } from "react";
+import { createElement, useEffect, useState } from "react";
 import "./bioniccss.css";
 export default function useBionicWrapper(bionicOn, children) {
   const [childReturn, setChildReturn] = useState();
@@ -48,7 +48,7 @@ export default function useBionicWrapper(bionicOn, children) {
 
   useEffect(() => {
     convertChildren();
-  }, []);
+  }, [children]);
 
   return childReturn;
 }
